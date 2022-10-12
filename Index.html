@@ -16,9 +16,9 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-            <div class="container container-fluid py-2">
-                <a class="navbar-brand" href="#">Your Logo</a>
+        <nav class="navbar navbar-expand-lg custom-bg">
+            <div class="container container-fluid py-1">
+                <a class="navbar-brand" href="index.html"><img src="./images/logo.png" alt="" width="180px"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -27,21 +27,39 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link2</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link3</a>
-                        </li>
+                        <!-- Button trigger modal -->
+                        <p class="nav-link text-uppercase text-white cursor-pointer" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">
+                            Get Direction
+                        </p>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Type your direction Address</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
-                                Dropdown
+                                Filter Your Marker
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Action</a></li>
@@ -49,23 +67,47 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Type Address To Find"
-                            aria-label="search">
-                        <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    <div class="d-flex">
+                        <button class="btn btn-outline-light" type="submit">Check Your Location</button>
+                    </div>
                 </div>
             </div>
         </nav>
     </header>
 
 
-    <div class="container">
-        <h1 class=" text-center py-2 text-uppercase">Google Geolocation</h1>
-    </div>
+    <div id="map"></div>
+
+
+
+
+    <footer>
+        <div class="copyright d-flex justify-content-center align-middle">
+            <p class="h-100">Assignment Done by harry</p>
+        </div>
+    </footer>
+
+
+
 
 
     <!-- Optional JavaScript; choose one of the two! -->
+
+    <script>
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"),
+                {
+                    zoom: 14,
+                    center: { lat: 43.2387, lng: -79.8881 },
+
+                });
+        }
+    </script>
+
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCbsua4EskTMpwMIvO5vkvTgw35rhCwTfs&callback=initMap">
+        </script>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -77,6 +119,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     -->
+
+
 </body>
 
 </html>
